@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{listings}
+\usepackage{booktabs}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 160mm
+\textheight 200mm
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+
+\newcounter{stepnum}
+
+\title{Assignment 2 Solution}
+\author{Matthew Braden, bradenm, 400109876}
+\date{\today}
+
+\begin {document}
+
+\maketitle
+
+Assignment 2 involved creating a variety of modules. Some of these modules include different tasks, such as reading from different text files containing different data types, allocating students to their program of choice, calculating averages for different genders, as well as many others.
+
+\section{Testing of the Original Program}
+
+When it came to choosing test cases for the assignment, the approach used involved testing every function at least once. When it came to certain functions that needed to be tested, a wider variety of test cases were needed to be used. For a lot of the functions, there was at least a normal test case, however for the majority of functions boundary and abnormal test cases were used in order to check the validity of the program.
+
+\medskip
+
+Through analyzing results from testing, many bugs were discovered all over the code. However there was not enough time to fix every bug and as a result the code does not function as it should as some functions in the SALst module were not fully completed. Therefore failing a majority of the tests.
+
+\section{Results of Testing Partner's Code}
+
+When running the partners code, the python test cases went as expected as the abnormal test cases failed as they were meant to. When it came to the boundary and normal test cases the code passed as the output was successful. The partners code also was able to raise errors when expected. The partners code functioned similar to the original program that was tested, and is therefore a success.
+
+\section{Critique of Given Design Specification}
+
+The strong advantages of this design specification for assignment 2 was the ability to display all of the information that is necessary without making any assumptions on what the input files needed to look like. The information given about each module went into great depth of showing what functions that will be needed as well as the type in which the functions output when necessary. The one disadvantage of the specification is that the discrete math that was involved was a bit hard to read for a couple of the functions. 
+
+\section{Answers}
+
+\begin{enumerate}
+
+\item In A1 the way the assignment explained how to sort the students in order of gpa was much more clear and easy to understand than the way A2 did with the discrete math explanation. However with most of the other functions the discrete math was easy to understand, therefore making the process in A2 to be clear with less assumptions being made. A1 has a major disadvantage when reading the students information file as it was not specified what the file would actually look like, where as in A2 the students information was given and therefore should allow for the partners code to work when being integrated with another students code.
+
+\item The specification should be modified to make a KeyError if the students gpa is out of the range of 0 to 12. You will not need to make a new ADT as you will just have to throw this exception in at the start of the functions in which it is necessary for the students gpa to be in between 0 and 12.
+
+\item The documentation can take advantage of these similarities by copying what DCapALst does to SALst since the functions are almost exactly the same except for a few minor differences.
+
+\item A2 is much more general than A1 as the layout of both the students and the departments data is the same for everyone. Unlike A1 where we would have free range to make assumptions of what the layout for the text files would like, A2 delivers with a specific format that cannot be altered.
+
+\item The use of SeqADT is much more valuable over a regular list. This is due to the fact that the SeqADT is much more of a stable ADT to use when using a set of data. When data sets become large a simple list is harder to use as it becomes more difficult to keep knowledge of where each item is in the list compared to the use of a sequence in SeqADT.
+
+\item The use of enums allows the items in the enumerated lists to be called in a much more simple manner. This is because each item in the enumerated list is assigned a value. So when the item is called in a different module a value will appear. These were not introduced in the specification for macids as the students macid cannot be assigned a certain value when using enums as it needs to be inputed from a text file.
+
+
+\end{enumerate}
+
+
+\newpage
+
+\lstset{language=Python, basicstyle=\tiny, breaklines=true, showspaces=false,
+  showstringspaces=false, breakatwhitespace=true}
+%\lstset{language=C,linewidth=.94\textwidth,xleftmargin=1.1cm}
+
+\def\thesection{\Alph{section}}
+
+\section{Code for StdntAllocTypes.py}
+
+\noindent \lstinputlisting{../src/StdntAllocTypes.py}
+
+\newpage
+
+\section{Code for SeqADT.py}
+
+\noindent \lstinputlisting{../src/SeqADT.py}
+
+\newpage
+
+\section{Code for DCapALst.py}
+
+\noindent \lstinputlisting{../src/DCapALst.py}
+
+\newpage
+
+\section{Code for AALst.py}
+
+\noindent \lstinputlisting{../src/AALst.py}
+
+\newpage
+
+\section{Code for SALst.py}
+
+\noindent \lstinputlisting{../src/SALst.py}
+
+\newpage
+
+\section{Code for Read.py}
+
+\noindent \lstinputlisting{../src/Read.py}
+
+\newpage
+
+\section{Code for Partner's SeqADT.py}
+
+\noindent \lstinputlisting{../partner/SeqADT.py}
+
+\newpage
+
+\section{Code for Partner's DCapALst.py}
+
+\noindent \lstinputlisting{../partner/DCapALst.py}
+
+\newpage
+
+\section{Code for Partner's SALst.py}
+
+\noindent \lstinputlisting{../partner/SALst.py}
+
+\newpage
+
+\section{Code for testAll.py}
+
+\noindent \lstinputlisting{../src/test_All.py}
+
+
+\end {document}
